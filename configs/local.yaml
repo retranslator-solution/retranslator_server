@@ -1,0 +1,3 @@
+storage:
+  badger:
+    path: ./badger.db

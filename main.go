@@ -1,4 +1,4 @@
-// Copyright © 2018 NAME HERE <EMAIL ADDRESS>
+// Copyright © 2018 Sergey Kozlov <s.kozlov9242@gmail.com>
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 
 package main
 
-import "github.com/retranslator-solution/retranslator_manager/cmd"
+import "github.com/retranslator-solution/retranslator_server/cmd"
 
 func main() {
 	cmd.Execute()
