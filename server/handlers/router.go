@@ -1,11 +1,12 @@
 package handlers
 
 import (
+	"time"
+
+	"github.com/gin-gonic/contrib/ginrus"
 	"github.com/gin-gonic/gin"
 	"github.com/retranslator-solution/retranslator_server/application"
 	"github.com/sirupsen/logrus"
-	"github.com/gin-gonic/contrib/ginrus"
-	"time"
 )
 
 func GetRouter(app *application.Application) *gin.Engine {

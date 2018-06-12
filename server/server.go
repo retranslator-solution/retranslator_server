@@ -5,39 +5,15 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
-	"path"
 	"syscall"
 	"time"
 
-	"github.com/dgraph-io/badger"
-	_ "github.com/lib/pq"
 	"github.com/retranslator-solution/retranslator_server/application"
 	"github.com/retranslator-solution/retranslator_server/server/handlers"
-	badgerStore "github.com/retranslator-solution/retranslator_server/storage/badger"
 	log "github.com/sirupsen/logrus"
 )
 
-func RunServer() {
-
-	// todo: use configs
-	badgerDir := path.Join(os.TempDir(), "test_badger")
-
-	opts := badger.DefaultOptions
-
-	opts.Dir = badgerDir
-	opts.ValueDir = badgerDir
-	db, err := badger.Open(opts)
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	defer db.Close()
-
-	storage := badgerStore.NewStorage(db)
-	app := &application.Application{
-		Storage: storage,
-	}
-
+func RunServer(app *application.Application) {
 	server := &http.Server{
 		Addr:    ":8080",
 		Handler: handlers.GetRouter(app),
