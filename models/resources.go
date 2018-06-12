@@ -1,44 +1,28 @@
 package models
 
-import "encoding/xml"
-
-type Resources struct {
-	XMLName xml.Name `xml:"resources"`
-	Strings interface{}
-}
-
-type Name struct {
-	Name string `xml:"name,attr"`
-}
-
-type Text struct {
-	Text string `xml:",innerxml"`
-}
-
 type StringResource struct {
-	Name
-	Text
-	XMLName xml.Name `xml:"string"`
-}
-
-type ArrayItem struct {
-	Text
-	XMLName xml.Name `xml:"item"`
+	Name  string `json:"name" binding:"required"`
+	Value string `json:"value" binding:"required"`
 }
 
 type ArrayResource struct {
-	Name
-	XMLName xml.Name `xml:"string-array"`
-	Items   []ArrayItem
+	Name   string   `json:"name" binding:"required"`
+	Values []string `json:"values" binding:"required"`
 }
 
-type PluralItem struct {
-	Text
-	XMLName  xml.Name `xml:"item"`
-	Quantity string   `xml:"quantity,attr"`
+type PluralValue struct {
+	Value    string `json:"value" binding:"required"`
+	Quantity string `json:"quantity" binding:"required"`
 }
 
 type PluralResource struct {
-	Name
-	XMLName xml.Name `xml:"plurals"`
+	Name   string        `json:"name" binding:"required"`
+	Values []PluralValue `json:"values" binding:"required"`
+}
+
+type Resource struct {
+	Name   string           `json:"name" binding:"required"` // ru_RU, en_EN etc
+	String []StringResource `json:"string" binding:"required"`
+	Array  []ArrayResource  `json:"array" binding:"required"`
+	Plural []PluralResource `json:"plural" binding:"required"`
 }

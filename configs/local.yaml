@@ -1,0 +1,4 @@
+storage:
+  backend: badger
+  badger:
+    path: ./badger.db

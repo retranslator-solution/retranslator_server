@@ -1,1 +1,1 @@
-# retranslator_manager
+# retranslator_server
