@@ -75,7 +75,7 @@ func TestStorageBadgerImpl(t *testing.T) {
 		},
 	}
 
-	err = s.UpdateOrCreate(&newResource)
+	err = s.Upsert(&newResource)
 	if err != nil {
 		t.Fatal()
 	}
@@ -97,7 +97,7 @@ func TestStorageBadgerImpl(t *testing.T) {
 	}
 	for _, k := range newKeys {
 		newResource.Name = k
-		err = s.UpdateOrCreate(&newResource)
+		err = s.Upsert(&newResource)
 		if err != nil {
 			t.Fatal()
 		}

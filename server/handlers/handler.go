@@ -48,13 +48,13 @@ func (h *Handler) UpdateOrCreate(c *gin.Context) {
 		return
 	}
 
-	err := h.Storage.UpdateOrCreate(&resource)
+	err := h.Storage.Upsert(&resource)
 
 	switch err {
 	case nil:
 		c.JSON(http.StatusOK, &resource)
 	default:
-		log.Errorln("can not UpdateOrCreate", err)
+		log.Errorln("can not Upsert", err)
 		c.AbortWithStatus(http.StatusInternalServerError)
 	}
 }

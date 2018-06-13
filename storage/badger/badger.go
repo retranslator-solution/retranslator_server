@@ -41,7 +41,7 @@ func (s *Storage) Get(name string) (*models.Resource, error) {
 	return &resource, err
 }
 
-func (s *Storage) UpdateOrCreate(resource *models.Resource) error {
+func (s *Storage) Upsert(resource *models.Resource) error {
 	return s.Update(func(txn *badger.Txn) error {
 		data, _ := json.Marshal(resource)
 		return txn.Set([]byte(resource.Name), data)
