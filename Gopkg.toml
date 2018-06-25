@@ -26,3 +26,7 @@
 [[constraint]]
   name = "github.com/gin-gonic/gin"
   revision = "6d913fc343cfac80d656db5be67a0ffb1323ba0d"
+
+[[constraint]]
+  name = "github.com/gobuffalo/packr"
+  version = "1.11.1"

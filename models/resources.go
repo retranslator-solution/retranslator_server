@@ -5,9 +5,13 @@ type StringResource struct {
 	Value string `json:"value" binding:"required"`
 }
 
+type ArrayValue struct {
+	Value string `json:"value" binding:"required"`
+}
+
 type ArrayResource struct {
-	Name   string   `json:"name" binding:"required"`
-	Values []string `json:"values" binding:"required"`
+	Name   string       `json:"name" binding:"required"`
+	Values []ArrayValue `json:"values" binding:"required"`
 }
 
 type PluralValue struct {
@@ -21,8 +25,8 @@ type PluralResource struct {
 }
 
 type Resource struct {
-	Name   string           `json:"name" binding:"required"` // ru_RU, en_EN etc
-	String []StringResource `json:"string" binding:"required"`
-	Array  []ArrayResource  `json:"array" binding:"required"`
-	Plural []PluralResource `json:"plural" binding:"required"`
+	Name            string           `json:"name" binding:"required"` // ru_RU, en_EN etc
+	ArrayResources  []ArrayResource  `json:"arrayResources" binding:"required"`
+	StringResources []StringResource `json:"stringResources" binding:"required"`
+	PluralResources []PluralResource `json:"pluralResources" binding:"required"`
 }

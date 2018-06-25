@@ -15,7 +15,7 @@ import (
 
 func RunServer(app *application.Application) {
 	server := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":8081",
 		Handler: handlers.GetRouter(app),
 	}
 

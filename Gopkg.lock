@@ -33,6 +33,12 @@
   version = "v1.4.7"
 
 [[projects]]
+  name = "github.com/gin-contrib/cors"
+  packages = ["."]
+  revision = "cf4846e6a636a76237a28d9286f163c132e841bc"
+  version = "v1.2"
+
+[[projects]]
   branch = "master"
   name = "github.com/gin-contrib/sse"
   packages = ["."]
@@ -53,6 +59,12 @@
     "render"
   ]
   revision = "6d913fc343cfac80d656db5be67a0ffb1323ba0d"
+
+[[projects]]
+  name = "github.com/gobuffalo/packr"
+  packages = ["."]
+  revision = "bd47f2894846e32edcf9aa37290fef76c327883f"
+  version = "v1.11.1"
 
 [[projects]]
   name = "github.com/golang/protobuf"
@@ -241,6 +253,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "f79f8891a90f397ed177f2569829417b413232d1ae3e567e15331ed4288465f2"
+  inputs-digest = "0ff1d4a575179b07de3f47b073c3157efc89ca48567e6626d0a99da68c2c6095"
   solver-name = "gps-cdcl"
   solver-version = 1

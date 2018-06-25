@@ -37,7 +37,7 @@ func TestStorageBadgerImpl(t *testing.T) {
 	}
 	newResource := models.Resource{
 		Name: "test_0",
-		String: []models.StringResource{
+		StringResources: []models.StringResource{
 			{
 				Name:  "sign_in_button",
 				Value: "Sign-in",
@@ -47,18 +47,18 @@ func TestStorageBadgerImpl(t *testing.T) {
 				Value: "Logout",
 			},
 		},
-		Array: []models.ArrayResource{
+		ArrayResources: []models.ArrayResource{
 			{
 				Name: "planets_array",
-				Values: []string{
-					"Mercury",
-					"Venus",
-					"Earth",
-					"Mars",
+				Values: []models.ArrayValue{
+					{"Mercury"},
+					{"Venus"},
+					{"Earth"},
+					{"Mars"},
 				},
 			},
 		},
-		Plural: []models.PluralResource{
+		PluralResources: []models.PluralResource{
 			{
 				Name: "number_of_songs",
 				Values: []models.PluralValue{
